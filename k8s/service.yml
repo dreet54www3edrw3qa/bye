@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: run
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP  
+  ports:
+  - name: "run"
+    port: 8080
+  selector:
+    app: run
